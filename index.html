@@ -131,7 +131,7 @@
     var mouseUpEvent = isTouch ? 'touchend' : 'mouseup';
 
 
-    var pixelDensity = 1;
+    var pixelDensity = isTouch ? window.pixelDensity / 2 : 1;
 
 
     function lockPosition() {
