@@ -305,10 +305,14 @@
             isThingClicked = false;
             initialMouse = null;
 
-            inertia = [
-                prevFrameX[4][0] - (prevFrameX[3][0] + prevFrameX[2][0] + prevFrameX[1][0] + prevFrameX[0][0]) / 4,
-                prevFrameX[4][1] - (prevFrameX[3][1] + prevFrameX[2][1] + prevFrameX[1][1] + prevFrameX[0][1]) / 4
-            ];
+            if ( prevFrameX.length < 2 ) {
+                inertia = [0,0]
+            } else {
+                inertia = [
+                    prevFrameX[2][0] - (prevFrameX[1][0] + prevFrameX[0][0]) / 2,
+                    prevFrameX[2][1] - (prevFrameX[1][1] + prevFrameX[0][1]) / 2
+                ];
+            }
 
             if ( new Date().getTime() - startTime > 200 ) inertia = [0,0]
 
