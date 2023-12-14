@@ -146,6 +146,9 @@
         currentScale = Math.max(anim.animationData.w / currentScale.width, anim.animationData.h / currentScale.height);
     }
 
+    window.addEventListener("load", function() { window.scrollTo(0,0); } );
+
+
     function screenCorrection(vec1) {
         // Multiplies the value based on 'Div Size' and 'Pixel Density'
         return [ vec1[0] * currentScale * pixelDensity, vec1[1] * currentScale * pixelDensity ];
