@@ -246,7 +246,7 @@
         })
 
         targ.addEventListener(mouseDownEvent, function(e) {
-           // e.preventDefault();
+            e.preventDefault();
 
             isThingClicked = true;
 
@@ -265,7 +265,7 @@
         })
 
         document.addEventListener(mouseMoveEvent, function(e) {
-            //e.preventDefault();
+            e.preventDefault();
             if ( initialMouse == null ) return;
 
 
@@ -299,7 +299,7 @@
         })
 
         document.addEventListener(mouseUpEvent, function(e) {
-           // e.preventDefault();
+            e.preventDefault();
             if ( isThingClicked == false ) return;
             lockPosition();
             isThingClicked = false;
